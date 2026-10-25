@@ -7,7 +7,7 @@
 <meta name="description" content="Réservez votre taxi bateau et vos excursions dans le lagon : Îlot Sable Blanc, Saziley, Angnalatsara, Bambo, Bandrélé. Repas grillés sur place.">
 <meta property="og:title" content="Rihilati Dia ni rassi · Voyageons dans le monde du lagon">
 <meta property="og:description" content="Taxi bateau & excursions dans le lagon. Réservation en 1 minute.">
-<meta property="og:image" content="assets/hero.jpg">
+<meta property="og:image" content="https://dinecherd.github.io/richilati/assets/sable-blanc.jpg">
 <meta name="theme-color" content="#0b2545">
 <link rel="icon" href="assets/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,6 +142,9 @@ section{position:relative;padding:110px 0}
 .circ::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(var(--pink),var(--turq));transform:scaleY(0);transform-origin:top;transition:transform .4s}
 .circ:hover,.circ.active{transform:translateX(8px);border-color:var(--turq);box-shadow:0 24px 50px -22px rgba(25,195,230,.6)}
 .circ.active::before,.circ:hover::before{transform:scaleY(1)}
+.circ{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center}
+.circ .thumb{width:110px;height:110px;border-radius:18px;object-fit:cover;transition:transform .5s cubic-bezier(.3,1.4,.5,1)}
+.circ:hover .thumb,.circ.active .thumb{transform:scale(1.06) rotate(-3deg)}
 .circ .num{color:var(--pink);font-weight:800;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase}
 .circ h3{color:var(--navy);font-size:1.25rem;margin:4px 0 12px;line-height:1.3}
 .circ .row{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
@@ -152,13 +155,24 @@ section{position:relative;padding:110px 0}
 .mini{padding:10px 18px;font-size:.92rem}
 
 /* Gallery */
-.gallery{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:auto auto;gap:22px;margin-top:56px}
-.ph{border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow);clip-path:inset(12% 12% 12% 12% round 28px);transition:clip-path 1.4s cubic-bezier(.7,0,.2,1)}
-.ph.in{clip-path:inset(0 0 0 0 round 28px)}
-.ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.3);transition:transform 2s cubic-bezier(.2,.8,.2,1)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:18px;margin-top:56px}
+.ph{border-radius:26px;overflow:hidden;position:relative;box-shadow:var(--shadow);clip-path:inset(12% 12% 12% 12% round 26px);transition:clip-path 1.4s cubic-bezier(.7,0,.2,1);cursor:zoom-in;background:#cfe9f5}
+.ph.in{clip-path:inset(0 0 0 0 round 26px)}
+.ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.3);transition:transform 2s cubic-bezier(.2,.8,.2,1),filter .6s}
 .ph.in img{transform:scale(1.02)}
-.ph.big{grid-row:span 2;min-height:420px}
-.ph figcaption{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.9);color:var(--navy);padding:8px 14px;border-radius:999px;font-weight:600;font-size:.9rem}
+.ph.in:hover img{transform:scale(1.1);filter:saturate(1.15)}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,37,69,.55));pointer-events:none}
+.ph.big{grid-column:span 2;grid-row:span 2}
+.ph.wide{grid-column:span 2}
+.ph figcaption{position:absolute;left:14px;bottom:14px;z-index:1;background:rgba(255,255,255,.92);color:var(--navy);padding:8px 14px;border-radius:999px;font-weight:600;font-size:.9rem;transform:translateY(6px);transition:transform .4s}
+.ph:hover figcaption{transform:none}
+.lightbox{position:fixed;inset:0;z-index:95;background:rgba(7,26,51,.92);backdrop-filter:blur(10px);display:grid;place-items:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;cursor:zoom-out}
+.lightbox.open{opacity:1;visibility:visible}
+.lightbox img{max-width:min(1400px,100%);max-height:82vh;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.5);transform:scale(.9);transition:transform .5s cubic-bezier(.3,1.3,.5,1)}
+.lightbox.open img{transform:none}
+.lightbox p{color:#fff;text-align:center;margin-top:14px;font-weight:600}
+.credits{font-size:.75rem;color:#5f7a94;margin-top:10px;text-align:center}
+.credits a{display:inline;padding:0}
 
 /* Meals */
 #repas{background:var(--navy);color:#fff;overflow:hidden}
@@ -272,8 +286,10 @@ footer{background:#071a33;color:#cfe2f2;padding:90px 0 120px;position:relative}
   .services,.circ-grid,.book,.meal-top,.foot{grid-template-columns:1fr}
   .map-card,.recap{position:relative;top:0}
   .menu{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr}
-  .ph.big{grid-row:auto;min-height:260px}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:170px;gap:12px}
+  .ph.big{grid-column:span 2;grid-row:span 2}
+  .circ{grid-template-columns:84px 1fr}
+  .circ .thumb{width:84px;height:84px}
   .group{grid-template-columns:1fr;padding:36px;text-align:center}
   section{padding:80px 0}
   .fab{bottom:86px}
@@ -372,7 +388,7 @@ footer{background:#071a33;color:#cfe2f2;padding:90px 0 120px;position:relative}
     </div>
     <div class="services">
       <article class="svc tilt reveal d1" data-preset="c1">
-        <div class="bg" style="background-image:url(assets/plage1.jpg)"></div>
+        <div class="bg" style="background-image:url(assets/saziley.jpg)"></div>
         <div class="glare"></div>
         <div class="ico">🏝️</div>
         <h3>Excursions lagon</h3>
@@ -441,10 +457,15 @@ footer{background:#071a33;color:#cfe2f2;padding:90px 0 120px;position:relative}
       <h2 class="title">Voyageons dans le <span class="script">monde du lagon</span></h2>
     </div>
     <div class="gallery">
-      <figure class="ph big"><img src="assets/hero.jpg" alt="Île et lagon turquoise"><figcaption>🌴 Le lagon vu d'en haut</figcaption></figure>
-      <figure class="ph"><img src="assets/plage1.jpg" alt="Îlot de sable blanc"><figcaption>🏝️ Îlot Sable Blanc</figcaption></figure>
-      <figure class="ph"><img src="assets/plage2.jpg" alt="Eaux turquoise du lagon"><figcaption>🌊 Eaux cristallines</figcaption></figure>
+      <figure class="ph big"><img src="assets/sable-blanc.jpg" alt="Îlot de Sable Blanc au milieu du lagon turquoise" loading="lazy"><figcaption>🏝️ Îlot Sable Blanc</figcaption></figure>
+      <figure class="ph wide"><img src="assets/saziley.jpg" alt="Eaux cristallines devant les plages de Saziley" loading="lazy"><figcaption>🌊 Plages de Saziley</figcaption></figure>
+      <figure class="ph"><img src="assets/bambo.jpg" alt="Îlot Bambo et sa plage" loading="lazy"><figcaption>🌴 Îlot Bambo</figcaption></figure>
+      <figure class="ph"><img src="assets/tortue.jpg" alt="Tortue verte nageant dans le lagon" loading="lazy"><figcaption>🐢 Les tortues</figcaption></figure>
+      <figure class="ph"><img src="assets/bandrele.jpg" alt="Îlot Bandrélé vu du ciel" loading="lazy"><figcaption>🛩️ Îlot Bandrélé</figcaption></figure>
+      <figure class="ph wide"><img src="assets/grande-terre.jpg" alt="Grande-Terre vue depuis l'îlot de Sable Blanc" loading="lazy"><figcaption>⛰️ Vue sur Grande-Terre</figcaption></figure>
+      <figure class="ph"><img src="assets/sable-blanc-ciel.jpg" alt="Banc de sable blanc vu du ciel" loading="lazy"><figcaption>✨ Sable Blanc vu du ciel</figcaption></figure>
     </div>
+    <p class="credits">Photos : Frédéric Ducarme, Kelly064, VillageHero · Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener">CC BY-SA</a></p>
   </div>
 </section>
 
@@ -582,6 +603,7 @@ footer{background:#071a33;color:#cfe2f2;padding:90px 0 120px;position:relative}
 <a class="fab" id="fab" href="https://wa.me/262639968410" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.9.8a3.2 3.2 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5c-.1-.2-.3-.3-.7-.4z"/></svg></a>
 <div class="mbar"><a href="tel:+262639968410" class="btn btn-ghost" style="background:var(--navy)">📞 Appeler</a><a href="#reserver" class="btn btn-pink">Réserver ⚓</a></div>
 <div class="toast" id="toast"></div>
+<div class="lightbox" id="lightbox"><figure><img alt=""><p></p></figure></div>
 
 <script>
 const $ = (s, r = document) => r.querySelector(s);
@@ -599,10 +621,10 @@ const PLACES = {
   saz: { x: 196, y: 385, n: 'Saziley' }
 };
 const CIRCUITS = [
-  { id: 'c1', name: 'Aller-retour Îlot Sable Blanc', short: 'Îlot Sable Blanc', ad: 40, ch: 30, route: ['dep', 'sb', 'dep'], via: [[280, 110], [300, 210]] },
-  { id: 'c2', name: 'Sable Blanc › Plage Angnalatsara', short: 'Sable Blanc + Angnalatsara', ad: 50, ch: 40, route: ['dep', 'sb', 'ang'] },
-  { id: 'c3', name: 'Îlot Bambo › Sable Blanc › Plage Angnalatsara ou Saziley', short: 'Bambo + Sable Blanc + plage', ad: 60, ch: 50, route: ['dep', 'bam', 'sb', 'ang', 'saz'] },
-  { id: 'c4', name: 'Îlot Bandrélé › Îlot Sable Blanc › Plage Angnalatsara ou Saziley', short: 'Bandrélé + Sable Blanc + plage', ad: 70, ch: 60, route: ['dep', 'ban', 'sb', 'ang', 'saz'] }
+  { id: 'c1', name: 'Aller-retour Îlot Sable Blanc', short: 'Îlot Sable Blanc', ad: 40, ch: 30, img: 'sable-blanc.jpg', route: ['dep', 'sb', 'dep'], via: [[280, 110], [300, 210]] },
+  { id: 'c2', name: 'Sable Blanc › Plage Angnalatsara', short: 'Sable Blanc + Angnalatsara', ad: 50, ch: 40, img: 'grande-terre.jpg', route: ['dep', 'sb', 'ang'] },
+  { id: 'c3', name: 'Îlot Bambo › Sable Blanc › Plage Angnalatsara ou Saziley', short: 'Bambo + Sable Blanc + plage', ad: 60, ch: 50, img: 'bambo.jpg', route: ['dep', 'bam', 'sb', 'ang', 'saz'] },
+  { id: 'c4', name: 'Îlot Bandrélé › Îlot Sable Blanc › Plage Angnalatsara ou Saziley', short: 'Bandrélé + Sable Blanc + plage', ad: 70, ch: 60, img: 'bandrele.jpg', route: ['dep', 'ban', 'sb', 'ang', 'saz'] }
 ];
 const MEALS = { B: { ad: 15, ch: 10 }, L: { ad: 20, ch: 15 } };
 const GROUP = { min: 15, ad: 90, ch: 70 };
@@ -857,11 +879,14 @@ function showRoute(c) {
 /* ---------- Circuit list ---------- */
 $('#circList').innerHTML = CIRCUITS.map((c, i) => `
   <article class="circ reveal d${i % 3}" data-id="${c.id}">
-    <span class="num">Circuit ${i + 1}</span>
-    <h3>${c.name}</h3>
-    <div class="row">
-      <div class="price"><div><b>${c.ad} €</b><small>par adulte</small></div><div><b>${c.ch} €</b><small>par enfant</small></div></div>
-      <a href="#reserver" class="btn btn-pink mini" data-preset="${c.id}">Réserver</a>
+    <img class="thumb" src="assets/${c.img}" alt="" loading="lazy">
+    <div>
+      <span class="num">Circuit ${i + 1}</span>
+      <h3>${c.name}</h3>
+      <div class="row">
+        <div class="price"><div><b>${c.ad} €</b><small>par adulte</small></div><div><b>${c.ch} €</b><small>par enfant</small></div></div>
+        <a href="#reserver" class="btn btn-pink mini" data-preset="${c.id}">Réserver</a>
+      </div>
     </div>
   </article>`).join('');
 $$('.circ').forEach(el => {
@@ -1014,6 +1039,17 @@ document.addEventListener('click', e => {
   update(); goStep(v === 'group' ? 2 : 1);
   if (p.tagName !== 'A') $('#reserver').scrollIntoView({ behavior: 'smooth' });
 });
+
+/* ---------- Lightbox ---------- */
+const lb = $('#lightbox');
+$$('.ph').forEach(f => f.addEventListener('click', () => {
+  const img = $('img', f);
+  $('img', lb).src = img.src; $('img', lb).alt = img.alt;
+  $('p', lb).textContent = $('figcaption', f).textContent;
+  lb.classList.add('open');
+}));
+lb.addEventListener('click', () => lb.classList.remove('open'));
+addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
 
 $('#yr').textContent = new Date().getFullYear();
 update();
