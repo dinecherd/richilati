@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rihilati Dia ni rassi · Taxi bateau & excursions lagon</title>
+<meta name="description" content="Réservez votre taxi bateau et vos excursions dans le lagon : Îlot Sable Blanc, Saziley, Angnalatsara, Bambo, Bandrélé. Repas grillés sur place.">
+<meta property="og:title" content="Rihilati Dia ni rassi · Voyageons dans le monde du lagon">
+<meta property="og:description" content="Taxi bateau & excursions dans le lagon. Réservation en 1 minute.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta name="theme-color" content="#0b2545">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b2545; --navy-2:#13315c; --ocean:#1d6fb8; --turq:#19c3e6; --lagoon:#2ee6d0;
+  --pink:#ff4f8b; --sand:#f6e7c8; --white:#ffffff; --ink:#0e1a2b; --muted:#5b6b80;
+  --bg:#f4fbff; --card:#ffffff; --radius:24px;
+  --shadow:0 20px 50px -20px rgba(11,37,69,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',system-ui,sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden;line-height:1.55}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer}
+.script{font-family:'Great Vibes',cursive;font-weight:400}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+
+/* ---------- Loader ---------- */
+#loader{position:fixed;inset:0;z-index:999;background:radial-gradient(circle at 50% 60%,#13315c,#0b2545 70%);display:grid;place-items:center;transition:opacity .8s,visibility .8s}
+#loader.gone{opacity:0;visibility:hidden}
+.ld{text-align:center;color:#fff}
+.ld svg{width:120px;animation:ldJump 1.4s ease-in-out infinite}
+.ld .script{font-size:3rem;display:block;margin-top:6px}
+.ld-bar{width:180px;height:4px;border-radius:4px;background:rgba(255,255,255,.15);margin:14px auto 0;overflow:hidden}
+.ld-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--turq),var(--lagoon));animation:ldFill 1.6s ease forwards}
+@keyframes ldJump{0%,100%{transform:translateY(10px) rotate(10deg)}50%{transform:translateY(-14px) rotate(-12deg)}}
+@keyframes ldFill{to{width:100%}}
+
+/* ---------- Nav ---------- */
+nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;width:min(1180px,100% - 24px);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 14px;border-radius:999px;background:rgba(11,37,69,.35);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border:1px solid rgba(255,255,255,.18);transition:background .4s,top .4s}
+nav.solid{background:rgba(11,37,69,.88);top:8px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+.brand img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--turq)}
+.brand span{font-family:'Great Vibes',cursive;font-size:1.7rem;line-height:1}
+.links{display:flex;gap:4px}
+.links a{color:#fff;text-decoration:none;padding:8px 14px;border-radius:999px;font-size:.95rem;transition:background .3s}
+.links a:hover{background:rgba(255,255,255,.14)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 24px;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden;will-change:transform}
+.btn-pink{background:linear-gradient(135deg,var(--pink),#ff7a59);color:#fff;box-shadow:0 10px 30px -8px rgba(255,79,139,.7)}
+.btn-turq{background:linear-gradient(135deg,var(--turq),var(--lagoon));color:var(--navy);box-shadow:0 10px 30px -8px rgba(25,195,230,.7)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(6px)}
+.btn:hover{box-shadow:0 16px 40px -10px rgba(11,37,69,.5)}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s}
+.btn:hover::after{transform:translateX(120%)}
+.burger{display:none;background:none;border:0;color:#fff;width:44px;height:44px}
+.burger svg{width:26px}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;height:100svh;min-height:620px;overflow:hidden;color:#fff;display:grid;place-items:center;text-align:center}
+#sea{position:absolute;inset:0;width:100%;height:100%}
+.hero-content{position:relative;z-index:3;padding:0 16px;margin-top:-6vh}
+.hero h1{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(3.4rem,11vw,8.5rem);line-height:.95;text-shadow:0 6px 40px rgba(11,37,69,.5)}
+.hero h1 .ch{display:inline-block;opacity:0;transform:translateY(60px) rotate(8deg);animation:chIn .9s cubic-bezier(.2,.9,.3,1.3) forwards}
+@keyframes chIn{to{opacity:1;transform:none}}
+.tag{letter-spacing:.5em;text-transform:lowercase;font-size:clamp(.75rem,1.8vw,1.05rem);margin-top:14px;min-height:1.6em;font-weight:300}
+.tag .caret{display:inline-block;width:2px;height:1em;background:#fff;vertical-align:middle;animation:blink 1s steps(1) infinite;margin-left:2px}
+@keyframes blink{50%{opacity:0}}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px;opacity:0;animation:fadeUp 1s 1.9s forwards}
+.hero-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px;opacity:0;animation:fadeUp 1s 2.2s forwards}
+.badge{font-size:.85rem;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(6px)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.boat{position:absolute;z-index:2;width:clamp(130px,18vw,230px);bottom:21%;left:-260px;animation:sail 26s linear infinite}
+.boat .bob{animation:bob 2.6s ease-in-out infinite;transform-origin:50% 80%}
+@keyframes sail{to{left:110%}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+.dolphin{position:absolute;z-index:2;width:clamp(70px,9vw,120px);bottom:17%;right:16%;opacity:0}
+.dolphin.jump{animation:jump 2.2s cubic-bezier(.4,0,.6,1) forwards}
+@keyframes jump{
+  0%{opacity:0;transform:translate(0,40px) rotate(40deg)}
+  10%{opacity:1}
+  50%{transform:translate(-120px,-150px) rotate(-5deg)}
+  90%{opacity:1}
+  100%{opacity:0;transform:translate(-240px,40px) rotate(-60deg)}}
+.splash{position:absolute;z-index:2;width:10px;height:10px;border-radius:50%;border:2px solid rgba(255,255,255,.8);animation:splash 1s ease-out forwards;pointer-events:none}
+@keyframes splash{to{transform:scale(9,3);opacity:0}}
+.scroll-ind{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;width:28px;height:46px;border:2px solid rgba(255,255,255,.7);border-radius:20px}
+.scroll-ind::before{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;background:#fff;border-radius:4px;animation:scr 1.6s infinite}
+@keyframes scr{to{transform:translateY(16px);opacity:0}}
+
+/* ---------- Marquee ---------- */
+.marquee{background:var(--navy);color:#fff;overflow:hidden;padding:18px 0;transform:rotate(-1.5deg) scale(1.03);margin-top:-14px;position:relative;z-index:4;box-shadow:var(--shadow)}
+.marquee .track{display:flex;gap:40px;width:max-content;animation:mq 30s linear infinite;font-size:1.25rem;font-weight:600;white-space:nowrap}
+.marquee .track span{display:flex;align-items:center;gap:40px}
+.marquee .track span::after{content:"✦";color:var(--turq)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- Sections ---------- */
+section{position:relative;padding:110px 0}
+.kicker{display:inline-block;color:var(--pink);font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:.8rem;margin-bottom:10px}
+.title{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;font-weight:800;color:var(--navy)}
+.title .script{color:var(--turq);font-size:1.25em;font-weight:400}
+.lead{color:var(--muted);font-size:1.1rem;max-width:620px;margin-top:14px}
+.center{text-align:center}.center .lead{margin-inline:auto}
+.reveal{opacity:0;transform:translateY(50px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:56px;perspective:1200px}
+.svc{position:relative;border-radius:32px;overflow:hidden;min-height:420px;color:#fff;padding:36px;display:flex;flex-direction:column;justify-content:flex-end;transform-style:preserve-3d;transition:transform .2s;box-shadow:var(--shadow);cursor:pointer}
+.svc .bg{position:absolute;inset:-20px;background-size:cover;background-position:center;transition:transform 1.2s;transform:translateZ(-40px) scale(1.12)}
+.svc:hover .bg{transform:translateZ(-40px) scale(1.22)}
+.svc::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,37,69,0) 25%,rgba(11,37,69,.92));z-index:1}
+.svc > *:not(.bg){position:relative;z-index:2;transform:translateZ(50px)}
+.svc .ico{width:64px;height:64px;border-radius:20px;background:rgba(255,255,255,.18);backdrop-filter:blur(8px);display:grid;place-items:center;font-size:2rem;margin-bottom:auto}
+.svc h3{font-size:2rem;font-weight:800}
+.svc p{opacity:.88;margin:8px 0 18px;max-width:420px}
+.svc .glare{position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.3),transparent 50%);opacity:0;transition:opacity .3s}
+.svc:hover .glare{opacity:1}
+.svc-taxi .bg{background:linear-gradient(160deg,#19c3e6 0%,#1d6fb8 55%,#0b2545 100%)}
+.svc-taxi .waves{position:absolute;inset:auto 0 0 0;height:60%;z-index:0}
+
+/* Circuits */
+#circuits{background:linear-gradient(180deg,var(--bg),#e6f7fd)}
+.circ-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;margin-top:56px;align-items:start}
+.map-card{position:sticky;top:100px;border-radius:32px;background:linear-gradient(160deg,#0f4c81,#0b2545);padding:18px;box-shadow:var(--shadow);overflow:hidden}
+.map-card svg{width:100%;height:auto;display:block}
+.map-legend{display:flex;justify-content:space-between;align-items:center;color:#cfeaf7;font-size:.9rem;padding:8px 8px 2px}
+.map-legend b{color:#fff}
+.route{fill:none;stroke:url(#gRoute);stroke-width:4;stroke-linecap:round;filter:drop-shadow(0 0 6px rgba(46,230,208,.8))}
+.place circle.p{fill:#fff;stroke:var(--turq);stroke-width:3}
+.place circle.pulse{fill:none;stroke:var(--lagoon);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:pulse 2.4s infinite}
+.place text{fill:#fff;font-size:13px;font-weight:600;paint-order:stroke;stroke:#0b2545;stroke-width:4px}
+.place.on circle.p{fill:var(--pink);stroke:#fff}
+@keyframes pulse{from{transform:scale(1);opacity:1}to{transform:scale(3.2);opacity:0}}
+.circ-list{display:flex;flex-direction:column;gap:18px}
+.circ{background:var(--card);border-radius:var(--radius);padding:24px 24px 22px;box-shadow:0 10px 30px -18px rgba(11,37,69,.4);border:2px solid transparent;transition:transform .35s,border-color .35s,box-shadow .35s;cursor:pointer;position:relative;overflow:hidden}
+.circ::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(var(--pink),var(--turq));transform:scaleY(0);transform-origin:top;transition:transform .4s}
+.circ:hover,.circ.active{transform:translateX(8px);border-color:var(--turq);box-shadow:0 24px 50px -22px rgba(25,195,230,.6)}
+.circ.active::before,.circ:hover::before{transform:scaleY(1)}
+.circ .num{color:var(--pink);font-weight:800;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase}
+.circ h3{color:var(--navy);font-size:1.25rem;margin:4px 0 12px;line-height:1.3}
+.circ .row{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.price{display:flex;gap:18px}
+.price div{line-height:1.1}
+.price b{font-size:2rem;color:var(--navy);font-weight:800}
+.price small{display:block;color:var(--muted);font-size:.8rem}
+.mini{padding:10px 18px;font-size:.92rem}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:auto auto;gap:22px;margin-top:56px}
+.ph{border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow);clip-path:inset(12% 12% 12% 12% round 28px);transition:clip-path 1.4s cubic-bezier(.7,0,.2,1)}
+.ph.in{clip-path:inset(0 0 0 0 round 28px)}
+.ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.3);transition:transform 2s cubic-bezier(.2,.8,.2,1)}
+.ph.in img{transform:scale(1.02)}
+.ph.big{grid-row:span 2;min-height:420px}
+.ph figcaption{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.9);color:var(--navy);padding:8px 14px;border-radius:999px;font-weight:600;font-size:.9rem}
+
+/* Meals */
+#repas{background:var(--navy);color:#fff;overflow:hidden}
+#repas .title{color:#fff}
+#repas .lead{color:#b9d3e8}
+.meal-top{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:50px}
+.meal-price{border-radius:28px;padding:30px;background:linear-gradient(140deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;gap:22px}
+.meal-price .emo{font-size:3rem;animation:float 4s ease-in-out infinite}
+.meal-price h3{font-size:1.4rem}
+.meal-price p{color:#b9d3e8}
+.meal-price p b{color:var(--lagoon);font-size:1.4rem}
+@keyframes float{50%{transform:translateY(-10px) rotate(6deg)}}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px}
+.menu-col{border-radius:28px;padding:28px;background:#fff;color:var(--ink)}
+.menu-col h4{color:var(--pink);letter-spacing:.15em;text-transform:uppercase;font-size:.85rem;margin-bottom:14px}
+.menu-col li{list-style:none;padding:10px 0;border-bottom:1px dashed #d6e3ee;display:flex;gap:10px;align-items:center;font-weight:600;color:var(--navy)}
+.menu-col li:last-child{border:0}
+.fire{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.fire i{position:absolute;bottom:-20px;width:6px;height:6px;border-radius:50%;background:#ffb347;box-shadow:0 0 10px #ff7a00;animation:ember linear infinite;opacity:.7}
+@keyframes ember{to{transform:translate(var(--dx),-110vh);opacity:0}}
+
+/* Group */
+.group{border-radius:36px;background:linear-gradient(120deg,var(--pink),#ff7a59 45%,#ffc04d);color:#fff;padding:54px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;box-shadow:0 30px 60px -25px rgba(255,79,139,.6);position:relative;overflow:hidden}
+.group::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.12);right:-120px;top:-160px;animation:float 7s ease-in-out infinite}
+.group h3{font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:800;line-height:1.1}
+.group p{opacity:.95;margin-top:10px;font-size:1.1rem}
+.group .big{font-size:clamp(4rem,10vw,7rem);font-weight:800;line-height:1;position:relative;z-index:1;text-align:center}
+.group .big small{display:block;font-size:1rem;font-weight:600}
+
+/* Booking */
+#reserver{background:linear-gradient(180deg,#e6f7fd,var(--bg))}
+.book{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;margin-top:50px;align-items:start}
+.panel{background:#fff;border-radius:32px;box-shadow:var(--shadow);padding:34px;position:relative;overflow:hidden}
+.steps{display:flex;gap:8px;margin-bottom:28px}
+.steps div{flex:1;height:6px;border-radius:6px;background:#e3eef6;overflow:hidden}
+.steps div i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--turq),var(--lagoon));transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.steps div.done i{width:100%}
+.step{display:none;animation:stepIn .6s cubic-bezier(.2,.8,.2,1)}
+.step.on{display:block}
+@keyframes stepIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+.step h3{color:var(--navy);font-size:1.5rem;margin-bottom:18px}
+.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.choice{text-align:left;border:2px solid #e3eef6;background:#fff;border-radius:18px;padding:16px;transition:all .25s;position:relative}
+.choice:hover{border-color:var(--turq);transform:translateY(-3px)}
+.choice.sel{border-color:var(--turq);background:linear-gradient(140deg,#e9fbff,#fff);box-shadow:0 12px 26px -16px rgba(25,195,230,.8)}
+.choice.sel::after{content:"✓";position:absolute;top:10px;right:12px;width:24px;height:24px;border-radius:50%;background:var(--turq);color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:800;animation:pop .35s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{from{transform:scale(0)}}
+.choice b{display:block;color:var(--navy)}
+.choice small{color:var(--muted)}
+.choice .em{font-size:1.5rem}
+.choice.wide{grid-column:span 2;display:flex;gap:14px;align-items:center}
+label.f{display:block;font-weight:600;color:var(--navy);margin:16px 0 6px;font-size:.95rem}
+.inp{width:100%;padding:14px 16px;border:2px solid #e3eef6;border-radius:14px;font:inherit;transition:border-color .25s,box-shadow .25s;background:#fff;color:var(--ink)}
+.inp:focus{outline:none;border-color:var(--turq);box-shadow:0 0 0 4px rgba(25,195,230,.15)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.counter{display:flex;align-items:center;justify-content:space-between;border:2px solid #e3eef6;border-radius:14px;padding:8px 10px}
+.counter span{font-weight:600}
+.counter div{display:flex;align-items:center;gap:12px}
+.counter button{width:38px;height:38px;border-radius:50%;border:0;background:#e9f6fc;color:var(--navy);font-size:1.3rem;font-weight:700;transition:transform .15s,background .2s}
+.counter button:hover{background:var(--turq);color:#fff}
+.counter button:active{transform:scale(.85)}
+.counter output{min-width:22px;text-align:center;font-weight:800;font-size:1.2rem;color:var(--navy)}
+.toggles{display:grid;gap:10px;margin-top:6px}
+.tg{display:flex;justify-content:space-between;align-items:center;border:2px solid #e3eef6;border-radius:14px;padding:12px 14px;cursor:pointer;transition:border-color .25s}
+.tg input{display:none}
+.tg .sw{width:48px;height:28px;border-radius:999px;background:#d6e3ee;position:relative;transition:background .3s;flex:none}
+.tg .sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .3s cubic-bezier(.3,1.5,.5,1);box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.tg input:checked + .sw{background:var(--turq)}
+.tg input:checked + .sw::after{transform:translateX(20px)}
+.tg.dis{opacity:.45;pointer-events:none}
+.note{margin-top:12px;padding:12px 14px;border-radius:14px;background:#fff4e5;color:#8a5300;font-size:.92rem;display:none}
+.note.show{display:block;animation:stepIn .4s}
+.nav-btns{display:flex;justify-content:space-between;gap:12px;margin-top:28px}
+.btn-back{background:#eef5fa;color:var(--navy)}
+.recap{position:sticky;top:100px;background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;border-radius:32px;padding:30px;box-shadow:var(--shadow);overflow:hidden}
+.recap h3{font-size:1.3rem;margin-bottom:14px}
+.recap ul{list-style:none}
+.recap li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:.95rem}
+.recap li span:first-child{color:#a9c4dc}
+.total{margin-top:18px;display:flex;justify-content:space-between;align-items:baseline}
+.total b{font-size:2.6rem;font-weight:800;background:linear-gradient(90deg,var(--turq),var(--lagoon));-webkit-background-clip:text;background-clip:text;color:transparent}
+.recap .waves{position:absolute;left:0;right:0;bottom:0;height:70px;opacity:.35;pointer-events:none}
+.send{display:grid;gap:10px;margin-top:22px;position:relative;z-index:1}
+.send .btn{justify-content:center}
+.wa{background:#25d366;color:#fff;box-shadow:0 10px 30px -8px rgba(37,211,102,.7)}
+.err{color:var(--pink);font-size:.9rem;margin-top:8px;min-height:1.2em}
+
+/* Contact / footer */
+footer{background:#071a33;color:#cfe2f2;padding:90px 0 120px;position:relative}
+.foot-wave{position:absolute;top:-1px;left:0;width:100%;height:80px;transform:rotate(180deg)}
+.foot{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;position:relative}
+.foot h4{color:#fff;margin-bottom:14px;font-size:1.1rem}
+.foot a{text-decoration:none;display:flex;align-items:center;gap:10px;padding:6px 0;transition:color .2s,transform .2s}
+.foot a:hover{color:var(--lagoon);transform:translateX(4px)}
+.phone{font-size:1.5rem;font-weight:800;color:#fff}
+.copy{text-align:center;margin-top:50px;font-size:.85rem;color:#7d97b0}
+
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;width:62px;height:62px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px -6px rgba(37,211,102,.7);animation:fab 2.5s infinite}
+.fab svg{width:32px;fill:#fff}
+@keyframes fab{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.mbar{display:none}
+.bubble{position:fixed;pointer-events:none;z-index:70;border-radius:50%;border:1.5px solid rgba(25,195,230,.7);background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.9),rgba(25,195,230,.15));animation:bub 1s ease-out forwards}
+@keyframes bub{to{transform:translateY(-50px) scale(.2);opacity:0}}
+.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,120px);background:var(--navy);color:#fff;padding:14px 22px;border-radius:999px;z-index:80;transition:transform .5s cubic-bezier(.3,1.4,.5,1);box-shadow:var(--shadow)}
+.toast.show{transform:translate(-50%,0)}
+
+@media (max-width:960px){
+  .links,.nav-cta{display:none}
+  .burger{display:block}
+  .links.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:rgba(11,37,69,.96);border-radius:24px;padding:14px}
+  .services,.circ-grid,.book,.meal-top,.foot{grid-template-columns:1fr}
+  .map-card,.recap{position:relative;top:0}
+  .menu{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .ph.big{grid-row:auto;min-height:260px}
+  .group{grid-template-columns:1fr;padding:36px;text-align:center}
+  section{padding:80px 0}
+  .fab{bottom:86px}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:10px}
+  .mbar .btn{flex:1;justify-content:center;padding:15px}
+  footer{padding-bottom:150px}
+}
+@media (max-width:560px){
+  .choices{grid-template-columns:1fr}.choice.wide{grid-column:auto}
+  .grid2{grid-template-columns:1fr}
+  .panel{padding:22px}
+  .svc{min-height:340px;padding:26px}
+  .brand span{font-size:1.4rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal,.ph{opacity:1;transform:none;clip-path:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader"><div class="ld">
+  <svg viewBox="0 0 120 60"><use href="#dolphinShape" fill="#19c3e6"/></svg>
+  <span class="script">Rihilati</span>
+  <div class="ld-bar"><i></i></div>
+</div></div>
+
+<!-- SVG sprites -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="dolphinShape" d="M4,40 C10,32 22,24 38,20 C52,16 66,15 76,17 C80,10 86,5 94,3 C91,9 90,13 91,18 C101,21 110,26 117,31 C110,32 104,32 99,33 C93,38 85,41 77,42 C75,47 71,51 64,53 C66,48 66,45 64,43 C52,45 38,45 26,43 C20,48 13,54 4,57 C8,51 9,46 9,43 C6,43 3,42 4,40 Z"/>
+  </defs>
+</svg>
+
+<nav id="nav">
+  <a class="brand" href="#top"><img src="assets/logo.jpg" alt="Logo Rihilati"><span>Rihilati</span></a>
+  <div class="links" id="links">
+    <a href="#services">Services</a>
+    <a href="#circuits">Circuits</a>
+    <a href="#repas">Repas</a>
+    <a href="#reserver">Réserver</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="btn btn-pink nav-cta magnet" href="#reserver">Réserver ⚓</a>
+  <button class="burger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <canvas id="sea"></canvas>
+  <svg class="boat" viewBox="0 0 200 100" aria-hidden="true">
+    <g class="bob">
+      <path d="M30 22 L120 22" stroke="#fff" stroke-width="3"/>
+      <path d="M40 22 L40 50 M110 22 L110 50" stroke="#fff" stroke-width="3"/>
+      <path d="M28 18 Q75 6 122 18 L122 24 L28 24 Z" fill="#ff4f8b"/>
+      <rect x="55" y="34" width="40" height="18" rx="4" fill="#e9fbff"/>
+      <path d="M8 52 L182 52 Q176 70 158 76 L30 76 Q14 70 8 52 Z" fill="#fff"/>
+      <path d="M12 62 L178 62" stroke="#19c3e6" stroke-width="5"/>
+      <rect x="2" y="54" width="8" height="18" rx="2" fill="#0b2545"/>
+      <path d="M128 20 L128 4 L146 10 L128 14" fill="#2ee6d0" stroke="#fff" stroke-width="1.5"/>
+      <g stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8">
+        <path d="M0 80 Q-20 78 -40 82"><animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/></path>
+        <path d="M6 86 Q-25 86 -60 90"><animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite"/></path>
+      </g>
+    </g>
+  </svg>
+  <svg class="dolphin" id="dolphin" viewBox="0 0 120 60" aria-hidden="true"><use href="#dolphinShape" fill="#0e3a66"/></svg>
+
+  <div class="hero-content">
+    <h1 id="heroTitle">Rihilati Dia ni rassi</h1>
+    <p class="tag"><span id="typer"></span><span class="caret"></span></p>
+    <div class="hero-cta">
+      <a href="#reserver" class="btn btn-pink magnet" data-preset="c1">🏝️ Réserver une excursion</a>
+      <a href="#reserver" class="btn btn-ghost magnet" data-preset="taxi">🚤 Taxi bateau</a>
+    </div>
+    <div class="hero-badges">
+      <span class="badge">⭐ Lagon classé parmi les plus beaux du monde</span>
+      <span class="badge">🍽️ Grillades sur place</span>
+      <span class="badge">👨‍👩‍👧 Familles & groupes</span>
+    </div>
+  </div>
+  <div class="scroll-ind"></div>
+</header>
+
+<div class="marquee"><div class="track" id="mq"></div></div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker">Nos services</span>
+      <h2 class="title">Embarquez pour le <span class="script">lagon</span></h2>
+      <p class="lead">Une traversée rapide ou une journée inoubliable entre îlots de sable blanc, plages sauvages et eaux turquoise.</p>
+    </div>
+    <div class="services">
+      <article class="svc tilt reveal d1" data-preset="c1">
+        <div class="bg" style="background-image:url(assets/plage1.jpg)"></div>
+        <div class="glare"></div>
+        <div class="ico">🏝️</div>
+        <h3>Excursions lagon</h3>
+        <p>4 circuits vers l'Îlot Sable Blanc, Saziley, Angnalatsara, Bambo et Bandrélé. Petit-déjeuner et déjeuner grillé en option.</p>
+        <span class="btn btn-turq mini" style="align-self:flex-start">Voir les circuits →</span>
+      </article>
+      <article class="svc svc-taxi tilt reveal d2" data-preset="taxi">
+        <div class="bg"></div>
+        <svg class="waves" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true">
+          <path fill="rgba(255,255,255,.12)"><animate attributeName="d" dur="6s" repeatCount="indefinite" values="M0 80 Q150 40 300 80 T600 80 V200 H0Z;M0 80 Q150 120 300 80 T600 80 V200 H0Z;M0 80 Q150 40 300 80 T600 80 V200 H0Z"/></path>
+          <path fill="rgba(255,255,255,.1)"><animate attributeName="d" dur="4.5s" repeatCount="indefinite" values="M0 120 Q150 150 300 120 T600 120 V200 H0Z;M0 120 Q150 90 300 120 T600 120 V200 H0Z;M0 120 Q150 150 300 120 T600 120 V200 H0Z"/></path>
+        </svg>
+        <div class="glare"></div>
+        <div class="ico">🚤</div>
+        <h3>Taxi bateau</h3>
+        <p>Une traversée, un transfert vers un îlot ou une plage ? On vous emmène où vous voulez dans le lagon. Tarif sur devis, réponse rapide.</p>
+        <span class="btn btn-pink mini" style="align-self:flex-start">Demander un devis →</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CIRCUITS -->
+<section id="circuits">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker">Circuits & tarifs</span>
+      <h2 class="title">Choisissez votre <span class="script">aventure</span></h2>
+      <p class="lead">Survolez un circuit pour voir le trajet se dessiner sur la carte du lagon.</p>
+    </div>
+    <div class="circ-grid">
+      <div class="map-card reveal">
+        <svg viewBox="0 0 600 420" id="map" aria-label="Carte stylisée du lagon">
+          <defs>
+            <linearGradient id="gRoute" x1="0" x2="1"><stop offset="0" stop-color="#ff4f8b"/><stop offset="1" stop-color="#2ee6d0"/></linearGradient>
+            <radialGradient id="gLagoon" cx=".55" cy=".5" r=".7"><stop offset="0" stop-color="#2ee6d0" stop-opacity=".55"/><stop offset="1" stop-color="#19c3e6" stop-opacity="0"/></radialGradient>
+            <pattern id="ripple" width="40" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 Q10 4 20 10 T40 10" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1.5"/></pattern>
+          </defs>
+          <rect width="600" height="420" fill="url(#ripple)"><animate attributeName="x" from="0" to="-40" dur="4s" repeatCount="indefinite"/></rect>
+          <ellipse cx="300" cy="220" rx="300" ry="230" fill="url(#gLagoon)"/>
+          <path d="M560 -10 C600 120 590 300 520 430" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+          <text x="548" y="215" fill="rgba(255,255,255,.55)" font-size="11" transform="rotate(80 548 215)">barrière de corail</text>
+          <path d="M0 0 L150 0 C170 60 115 120 135 175 C150 225 110 260 160 300 C195 330 180 380 205 430 L0 430 Z" fill="#2f8f5b"/>
+          <path d="M0 0 L150 0 C170 60 115 120 135 175 C150 225 110 260 160 300 C195 330 180 380 205 430" fill="none" stroke="#f6e7c8" stroke-width="6" opacity=".9"/>
+          <path d="M30 60 C60 40 90 70 70 110 C55 140 20 120 30 60Z M40 230 C70 210 95 250 80 290 C60 320 25 290 40 230Z" fill="#287a4e"/>
+          <text x="22" y="190" fill="rgba(255,255,255,.75)" font-size="15" font-weight="700" letter-spacing="3">GRANDE-TERRE</text>
+          <ellipse cx="300" cy="150" rx="20" ry="13" fill="#2f8f5b" stroke="#f6e7c8" stroke-width="3"/>
+          <ellipse cx="270" cy="295" rx="24" ry="15" fill="#2f8f5b" stroke="#f6e7c8" stroke-width="3"/>
+          <ellipse cx="430" cy="115" rx="34" ry="8" fill="#f6e7c8"><animate attributeName="rx" values="34;30;34" dur="5s" repeatCount="indefinite"/></ellipse>
+          <path id="routePath" class="route" d=""/>
+          <g id="mapBoat" opacity="0"><circle r="11" fill="#fff"/><text y="5" text-anchor="middle" font-size="13">🚤</text></g>
+          <g id="places"></g>
+        </svg>
+        <div class="map-legend"><span id="mapLabel">Survolez un circuit ↓</span><b id="mapPrice"></b></div>
+      </div>
+      <div class="circ-list" id="circList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker">Carte postale</span>
+      <h2 class="title">Voyageons dans le <span class="script">monde du lagon</span></h2>
+    </div>
+    <div class="gallery">
+      <figure class="ph big"><img src="assets/hero.jpg" alt="Île et lagon turquoise"><figcaption>🌴 Le lagon vu d'en haut</figcaption></figure>
+      <figure class="ph"><img src="assets/plage1.jpg" alt="Îlot de sable blanc"><figcaption>🏝️ Îlot Sable Blanc</figcaption></figure>
+      <figure class="ph"><img src="assets/plage2.jpg" alt="Eaux turquoise du lagon"><figcaption>🌊 Eaux cristallines</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- REPAS -->
+<section id="repas">
+  <div class="fire" id="fire"></div>
+  <div class="wrap" style="position:relative">
+    <div class="reveal">
+      <span class="kicker">À table sur la plage</span>
+      <h2 class="title">Grillades les <span class="script">pieds dans le sable</span></h2>
+      <p class="lead">Ajoutez le petit-déjeuner et/ou le déjeuner à votre excursion. Tout est préparé et grillé sur place.</p>
+    </div>
+    <div class="meal-top">
+      <div class="meal-price reveal d1"><span class="emo">🥐</span><div><h3>Petit-déjeuner</h3><p><b>15 €</b> adulte · <b>10 €</b> enfant</p></div></div>
+      <div class="meal-price reveal d2"><span class="emo">🔥</span><div><h3>Déjeuner</h3><p><b>20 €</b> adulte · <b>15 €</b> enfant</p></div></div>
+    </div>
+    <div class="menu">
+      <div class="menu-col reveal d1"><h4>Viandes & poissons</h4><ul><li>🐟 Poisson grillé</li><li>🐠 Mabawa grillé</li><li>🍢 Brochette de bœuf</li><li>🐙 Poulpe grillé</li></ul></div>
+      <div class="menu-col reveal d2"><h4>Accompagnements</h4><ul><li>🍌 Banane, manioc</li><li>🍈 Fruit à pain</li><li>🍚 Riz jaune ou pilao</li><li>🥔 Songe, pomme de terre</li></ul></div>
+      <div class="menu-col reveal d3"><h4>Boissons</h4><ul><li>💧 Eau</li><li>🥭 Jus de prune de cythère</li><li>🧃 Jus de tamarin</li><li>🌳 Jus de fruit de baobab</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- GROUPE -->
+<section style="padding-bottom:40px">
+  <div class="wrap">
+    <div class="group reveal">
+      <div style="position:relative;z-index:1">
+        <span class="kicker" style="color:#fff">Tarif groupe</span>
+        <h3>Vous êtes 15 ou plus ? La journée tout compris !</h3>
+        <p><b>90 € par adulte</b> et <b>70 € par enfant</b> (moins de 12 ans), petit-déjeuner et déjeuner inclus sur place.</p>
+        <a href="#reserver" class="btn btn-ghost magnet" style="margin-top:20px" data-preset="group">Réserver pour un groupe →</a>
+      </div>
+      <div class="big"><span class="count" data-to="15">0</span>+<small>personnes</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVER -->
+<section id="reserver">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker">Réservation express</span>
+      <h2 class="title">Réservez en <span class="script">1 minute</span></h2>
+      <p class="lead">3 étapes, prix calculé en direct, et votre demande part directement sur WhatsApp. Pas de paiement en ligne : on confirme avec vous.</p>
+    </div>
+    <div class="book">
+      <div class="panel reveal">
+        <div class="steps"><div class="done"><i></i></div><div><i></i></div><div><i></i></div></div>
+
+        <div class="step on" data-step="1">
+          <h3>1. Que souhaitez-vous ?</h3>
+          <div class="choices" id="choices"></div>
+        </div>
+
+        <div class="step" data-step="2">
+          <h3>2. Quand et combien ?</h3>
+          <div class="grid2">
+            <div><label class="f" for="date">Date</label><input class="inp" type="date" id="date"></div>
+            <div><label class="f" for="time">Heure souhaitée</label><input class="inp" type="time" id="time" value="08:00"></div>
+          </div>
+          <div class="grid2" style="margin-top:14px">
+            <div class="counter"><span>Adultes</span><div><button type="button" data-c="ad" data-d="-1" aria-label="Moins d'adultes">−</button><output id="ad">2</output><button type="button" data-c="ad" data-d="1" aria-label="Plus d'adultes">+</button></div></div>
+            <div class="counter"><span>Enfants <small style="color:var(--muted)">(-12 ans)</small></span><div><button type="button" data-c="ch" data-d="-1" aria-label="Moins d'enfants">−</button><output id="ch">0</output><button type="button" data-c="ch" data-d="1" aria-label="Plus d'enfants">+</button></div></div>
+          </div>
+          <div id="taxiFields" style="display:none">
+            <div class="grid2">
+              <div><label class="f" for="from">Départ</label><input class="inp" id="from" placeholder="Ex : ponton de Bandrélé"></div>
+              <div><label class="f" for="to">Destination</label><input class="inp" id="to" placeholder="Ex : Îlot Sable Blanc"></div>
+            </div>
+            <label class="tg" style="margin-top:12px"><span>Aller-retour</span><input type="checkbox" id="ar" checked><span class="sw"></span></label>
+          </div>
+          <div id="mealFields">
+            <label class="f">Repas sur place</label>
+            <div class="toggles">
+              <label class="tg" id="tgB"><span>🥐 Petit-déjeuner <small style="color:var(--muted)">15 € / 10 €</small></span><input type="checkbox" id="mB"><span class="sw"></span></label>
+              <label class="tg" id="tgL"><span>🔥 Déjeuner grillé <small style="color:var(--muted)">20 € / 15 €</small></span><input type="checkbox" id="mL" checked><span class="sw"></span></label>
+            </div>
+          </div>
+          <div class="note" id="groupNote">🎉 Tarif groupe appliqué : 90 € / adulte, 70 € / enfant, petit-déjeuner et déjeuner inclus !</div>
+        </div>
+
+        <div class="step" data-step="3">
+          <h3>3. Vos coordonnées</h3>
+          <label class="f" for="name">Nom & prénom</label><input class="inp" id="name" autocomplete="name" placeholder="Votre nom">
+          <label class="f" for="tel">Téléphone</label><input class="inp" id="tel" type="tel" autocomplete="tel" placeholder="06 39 …">
+          <label class="f" for="msg">Un message ? <small style="color:var(--muted)">(facultatif)</small></label><textarea class="inp" id="msg" rows="3" placeholder="Anniversaire, allergies, matériel de snorkeling…"></textarea>
+        </div>
+
+        <div class="err" id="err"></div>
+        <div class="nav-btns">
+          <button class="btn btn-back" id="prev" style="visibility:hidden">← Retour</button>
+          <button class="btn btn-turq" id="next">Continuer →</button>
+        </div>
+      </div>
+
+      <aside class="recap reveal d1">
+        <h3>🧾 Votre réservation</h3>
+        <ul id="recapList"></ul>
+        <div class="total"><span>Total estimé</span><b id="total">0 €</b></div>
+        <div class="send">
+          <a class="btn wa" id="sendWa" href="#" target="_blank" rel="noopener"><svg width="20" viewBox="0 0 32 32" fill="#fff"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.9.8a3.2 3.2 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5c-.1-.2-.3-.3-.7-.4z"/></svg>Envoyer sur WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:+262639968410">📞 Appeler le 0639 96 84 10</a>
+        </div>
+        <svg class="waves" viewBox="0 0 600 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#19c3e6"><animate attributeName="d" dur="5s" repeatCount="indefinite" values="M0 50 Q150 20 300 50 T600 50 V100 H0Z;M0 50 Q150 80 300 50 T600 50 V100 H0Z;M0 50 Q150 20 300 50 T600 50 V100 H0Z"/></path></svg>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <svg class="foot-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="#f4fbff"><animate attributeName="d" dur="8s" repeatCount="indefinite" values="M0 40 Q360 0 720 40 T1440 40 V0 H0Z;M0 40 Q360 80 720 40 T1440 40 V0 H0Z;M0 40 Q360 0 720 40 T1440 40 V0 H0Z"/></path></svg>
+  <div class="wrap foot">
+    <div>
+      <a class="brand" href="#top" style="padding:0"><img src="assets/logo.jpg" alt=""><span style="font-size:2.2rem">Rihilati Dia ni rassi</span></a>
+      <p style="margin-top:14px;max-width:340px">Voyageons dans le monde du lagon. Taxi bateau, excursions vers les îlots et grillades sur la plage.</p>
+    </div>
+    <div>
+      <h4>Par téléphone</h4>
+      <a class="phone" href="tel:+262639968410">0639 96 84 10</a>
+      <a class="phone" href="tel:+262693459687">0693 45 96 87</a>
+    </div>
+    <div>
+      <h4>Suivez-nous</h4>
+      <a href="https://www.facebook.com/search/top?q=RIHILATI%20DIA%20NI%20RASSI" target="_blank" rel="noopener">📘 Facebook · Rihilati Dia ni Rassi</a>
+      <a href="https://www.snapchat.com/add/rihilatidia" target="_blank" rel="noopener">👻 Snap · @rihilatidia</a>
+      <a href="https://www.instagram.com/rihilati/" target="_blank" rel="noopener">📸 Instagram · @rihilati</a>
+    </div>
+  </div>
+  <p class="copy">© <span id="yr"></span> Rihilati Dia ni rassi · Tarifs indicatifs, confirmés lors de la réservation.</p>
+</footer>
+
+<a class="fab" id="fab" href="https://wa.me/262639968410" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.9.8a3.2 3.2 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5c-.1-.2-.3-.3-.7-.4z"/></svg></a>
+<div class="mbar"><a href="tel:+262639968410" class="btn btn-ghost" style="background:var(--navy)">📞 Appeler</a><a href="#reserver" class="btn btn-pink">Réserver ⚓</a></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const WA = '262639968410';
+
+/* ---------- Data ---------- */
+const PLACES = {
+  dep: { x: 128, y: 195, n: 'Départ' },
+  ban: { x: 300, y: 150, n: 'Îlot Bandrélé' },
+  sb:  { x: 430, y: 115, n: 'Îlot Sable Blanc' },
+  bam: { x: 270, y: 295, n: 'Îlot Bambo' },
+  ang: { x: 165, y: 300, n: 'Angnalatsara' },
+  saz: { x: 196, y: 385, n: 'Saziley' }
+};
+const CIRCUITS = [
+  { id: 'c1', name: 'Aller-retour Îlot Sable Blanc', short: 'Îlot Sable Blanc', ad: 40, ch: 30, route: ['dep', 'sb', 'dep'], via: [[280, 110], [300, 210]] },
+  { id: 'c2', name: 'Sable Blanc › Plage Angnalatsara', short: 'Sable Blanc + Angnalatsara', ad: 50, ch: 40, route: ['dep', 'sb', 'ang'] },
+  { id: 'c3', name: 'Îlot Bambo › Sable Blanc › Plage Angnalatsara ou Saziley', short: 'Bambo + Sable Blanc + plage', ad: 60, ch: 50, route: ['dep', 'bam', 'sb', 'ang', 'saz'] },
+  { id: 'c4', name: 'Îlot Bandrélé › Îlot Sable Blanc › Plage Angnalatsara ou Saziley', short: 'Bandrélé + Sable Blanc + plage', ad: 70, ch: 60, route: ['dep', 'ban', 'sb', 'ang', 'saz'] }
+];
+const MEALS = { B: { ad: 15, ch: 10 }, L: { ad: 20, ch: 15 } };
+const GROUP = { min: 15, ad: 90, ch: 70 };
+
+/* ---------- Loader ---------- */
+addEventListener('load', () => setTimeout(() => {
+  $('#loader').classList.add('gone');
+  startHero();
+}, reduce ? 0 : 1500));
+
+/* ---------- Hero title + typewriter ---------- */
+function startHero() {
+  const h = $('#heroTitle');
+  const txt = h.textContent;
+  h.innerHTML = '';
+  [...txt].forEach((c, i) => {
+    const s = document.createElement('span');
+    s.className = 'ch';
+    s.textContent = c === ' ' ? ' ' : c;
+    s.style.animationDelay = (i * 0.05) + 's';
+    h.appendChild(s);
+  });
+  const t = 'voyageons dans le monde du lagon';
+  let i = 0;
+  setTimeout(function type() {
+    $('#typer').textContent = t.slice(0, ++i);
+    if (i < t.length) setTimeout(type, 55);
+  }, 1100);
+}
+
+/* ---------- Animated sea canvas ---------- */
+(() => {
+  const cv = $('#sea'), ctx = cv.getContext('2d');
+  let W, H, dpr, t = 0, mx = 0, my = 0;
+  const clouds = Array.from({ length: 7 }, () => ({ x: Math.random(), y: Math.random() * .3 + .05, s: Math.random() * .6 + .5, v: Math.random() * .00008 + .00003 }));
+  const sparks = Array.from({ length: 90 }, () => ({ x: Math.random(), y: Math.random(), p: Math.random() * 6.28 }));
+  function size() {
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  addEventListener('resize', () => { size(); if (reduce) frame(); }); size();
+  addEventListener('mousemove', e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; });
+
+  function cloud(x, y, s) {
+    ctx.beginPath();
+    [[0, 0, 40], [35, -15, 45], [75, 0, 38], [30, 12, 35]].forEach(([a, b, r]) => {
+      ctx.moveTo(x + a * s + r * s, y + b * s);
+      ctx.arc(x + a * s, y + b * s, r * s, 0, 6.28);
+    });
+    ctx.fill();
+  }
+  function island(hz, ox) {
+    ctx.fillStyle = '#1e5a45';
+    ctx.beginPath();
+    const x0 = W * .52 + ox, w = W * .5;
+    ctx.moveTo(x0, hz);
+    ctx.bezierCurveTo(x0 + w * .15, hz - H * .1, x0 + w * .35, hz - H * .14, x0 + w * .5, hz - H * .09);
+    ctx.bezierCurveTo(x0 + w * .62, hz - H * .06, x0 + w * .72, hz - H * .11, x0 + w * .82, hz - H * .07);
+    ctx.bezierCurveTo(x0 + w * .9, hz - H * .03, x0 + w, hz - H * .01, x0 + w * 1.05, hz);
+    ctx.fill();
+    ctx.fillStyle = 'rgba(246,231,200,.9)';
+    ctx.fillRect(x0 + w * .1, hz - 2, w * .8, 3);
+  }
+  function frame() {
+    t += 1;
+    const hz = H * .5 + my * 14;
+    // sky
+    let g = ctx.createLinearGradient(0, 0, 0, hz);
+    g.addColorStop(0, '#1d6fb8'); g.addColorStop(.6, '#5cc4ef'); g.addColorStop(1, '#bdeeff');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, hz + 2);
+    // sun + rays
+    const sx = W * .78 - mx * 40, sy = H * .18;
+    ctx.save(); ctx.translate(sx, sy); ctx.rotate(t * .0015);
+    for (let i = 0; i < 12; i++) {
+      ctx.rotate(Math.PI / 6);
+      ctx.fillStyle = 'rgba(255,255,255,.07)';
+      ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(W, -40); ctx.lineTo(W, 40); ctx.fill();
+    }
+    ctx.restore();
+    g = ctx.createRadialGradient(sx, sy, 0, sx, sy, 120);
+    g.addColorStop(0, 'rgba(255,255,240,1)'); g.addColorStop(.25, 'rgba(255,245,200,.9)'); g.addColorStop(1, 'rgba(255,245,200,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(sx, sy, 120, 0, 6.28); ctx.fill();
+    // clouds
+    ctx.fillStyle = 'rgba(255,255,255,.85)';
+    clouds.forEach(c => { c.x += c.v; if (c.x > 1.2) c.x = -.2; cloud(c.x * W - mx * 30 * c.s, c.y * H, c.s * Math.min(1.3, W / 900)); });
+    island(hz, -mx * 60);
+    // sea layers
+    const layers = [
+      { c1: '#3fd9e8', c2: '#1aa5d6', a: 4, f: .012, s: .02, y: 0 },
+      { c1: '#2ec4dd', c2: '#1386c4', a: 7, f: .009, s: .028, y: .12 },
+      { c1: '#1ba7cf', c2: '#0f5f9e', a: 11, f: .007, s: .035, y: .28 },
+      { c1: '#137fb5', c2: '#0b2545', a: 16, f: .005, s: .045, y: .5 }
+    ];
+    layers.forEach((L, i) => {
+      const base = hz + (H - hz) * L.y;
+      g = ctx.createLinearGradient(0, base, 0, H);
+      g.addColorStop(0, L.c1); g.addColorStop(1, L.c2);
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.moveTo(0, H);
+      for (let x = 0; x <= W + 10; x += 10) {
+        const y = base + Math.sin(x * L.f + t * L.s) * L.a + Math.sin(x * L.f * 2.3 - t * L.s * 1.4) * L.a * .4 + mx * (i + 1) * 4;
+        ctx.lineTo(x, y);
+      }
+      ctx.lineTo(W, H); ctx.fill();
+    });
+    // sparkles
+    sparks.forEach(s => {
+      const y = hz + 8 + s.y * (H - hz);
+      const a = (Math.sin(t * .05 + s.p) + 1) / 2;
+      ctx.fillStyle = `rgba(255,255,255,${a * .8})`;
+      ctx.fillRect(s.x * W + Math.sin(t * .01 + s.p) * 6, y, 2 + a * 3, 1.5);
+    });
+    if (!reduce) requestAnimationFrame(frame);
+  }
+  frame();
+})();
+
+/* ---------- Dolphin jumps ---------- */
+(() => {
+  const d = $('#dolphin'), hero = $('.hero');
+  function jump() {
+    d.classList.remove('jump'); void d.offsetWidth; d.classList.add('jump');
+    const r = d.getBoundingClientRect(), hr = hero.getBoundingClientRect();
+    [0, 2100].forEach((delay, k) => setTimeout(() => {
+      const s = document.createElement('div');
+      s.className = 'splash';
+      s.style.left = (r.left - hr.left + r.width / 2 - k * 240) + 'px';
+      s.style.top = (r.top - hr.top + r.height) + 'px';
+      hero.appendChild(s); setTimeout(() => s.remove(), 1000);
+    }, delay));
+  }
+  if (!reduce) { setTimeout(jump, 3500); setInterval(jump, 9000); }
+  hero.addEventListener('click', e => { if (!e.target.closest('a')) jump(); });
+})();
+
+/* ---------- Marquee ---------- */
+(() => {
+  const words = ['Îlot Sable Blanc', 'Plage de Saziley', 'Îlot Bambo', 'Îlot Bandrélé', 'Plage Angnalatsara', 'Taxi bateau', 'Grillades sur la plage', 'Dauphins & tortues'];
+  const html = words.map(w => `<span>${w}</span>`).join('');
+  $('#mq').innerHTML = html + html;
+})();
+
+/* ---------- Nav ---------- */
+addEventListener('scroll', () => $('#nav').classList.toggle('solid', scrollY > 60), { passive: true });
+$('#burger').onclick = () => $('#links').classList.toggle('open');
+$$('#links a').forEach(a => a.onclick = () => $('#links').classList.remove('open'));
+
+/* ---------- Reveal on scroll + counters ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add('in');
+  $$('.count', e.target).forEach(countUp);
+  io.unobserve(e.target);
+}), { threshold: .15 });
+$$('.reveal, .ph').forEach(el => io.observe(el));
+function countUp(el) {
+  const to = +el.dataset.to, t0 = performance.now();
+  (function step(now) {
+    const p = Math.min(1, (now - t0) / 1200);
+    el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+    if (p < 1) requestAnimationFrame(step);
+  })(t0);
+}
+
+/* ---------- Tilt cards + magnetic buttons ---------- */
+if (matchMedia('(hover:hover)').matches && !reduce) {
+  $$('.tilt').forEach(c => {
+    c.addEventListener('mousemove', e => {
+      const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      c.style.transform = `rotateY(${(x - .5) * 14}deg) rotateX(${(.5 - y) * 14}deg)`;
+      c.style.setProperty('--gx', x * 100 + '%'); c.style.setProperty('--gy', y * 100 + '%');
+    });
+    c.addEventListener('mouseleave', () => c.style.transform = '');
+  });
+  $$('.magnet').forEach(b => {
+    b.addEventListener('mousemove', e => {
+      const r = b.getBoundingClientRect();
+      b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .25}px,${(e.clientY - r.top - r.height / 2) * .35}px)`;
+    });
+    b.addEventListener('mouseleave', () => b.style.transform = '');
+  });
+  // bubble trail
+  let last = 0;
+  addEventListener('mousemove', e => {
+    const now = performance.now(); if (now - last < 45) return; last = now;
+    const b = document.createElement('span'), s = 6 + Math.random() * 10;
+    b.className = 'bubble';
+    Object.assign(b.style, { width: s + 'px', height: s + 'px', left: e.clientX - s / 2 + 'px', top: e.clientY - s / 2 + 'px' });
+    document.body.appendChild(b); setTimeout(() => b.remove(), 1000);
+  });
+}
+
+/* ---------- Embers in meals section ---------- */
+(() => {
+  const f = $('#fire');
+  for (let i = 0; i < 26; i++) {
+    const e = document.createElement('i');
+    e.style.left = Math.random() * 100 + '%';
+    e.style.animationDuration = 6 + Math.random() * 8 + 's';
+    e.style.animationDelay = -Math.random() * 10 + 's';
+    e.style.setProperty('--dx', (Math.random() * 120 - 60) + 'px');
+    f.appendChild(e);
+  }
+})();
+
+/* ---------- Map ---------- */
+const routePath = $('#routePath'), mapBoat = $('#mapBoat');
+(() => {
+  $('#places').innerHTML = Object.entries(PLACES).map(([k, p]) => {
+    const right = p.x > 200 || k === 'saz';
+    return `<g class="place" data-k="${k}"><circle class="pulse" cx="${p.x}" cy="${p.y}" r="6"/><circle class="p" cx="${p.x}" cy="${p.y}" r="7"/><text x="${p.x + (right ? 14 : -12)}" y="${p.y + 5}" text-anchor="${right ? 'start' : 'end'}">${p.n}</text></g>`;
+  }).join('');
+})();
+function smoothPath(pts) {
+  let d = `M${pts[0][0]},${pts[0][1]}`;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+    const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    d += ` C${c1},${c2},${p2[0]},${p2[1]}`;
+  }
+  return d;
+}
+let boatAnim;
+function showRoute(c) {
+  let pts = c.route.map(k => [PLACES[k].x, PLACES[k].y]);
+  if (c.via) pts = [pts[0], c.via[0], pts[1], c.via[1], pts[2]];
+  routePath.setAttribute('d', smoothPath(pts));
+  const len = routePath.getTotalLength();
+  routePath.style.transition = 'none';
+  routePath.style.strokeDasharray = len;
+  routePath.style.strokeDashoffset = len;
+  routePath.getBoundingClientRect();
+  routePath.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(.6,0,.2,1)';
+  routePath.style.strokeDashoffset = 0;
+  $$('.place').forEach(g => g.classList.toggle('on', c.route.includes(g.dataset.k)));
+  $('#mapLabel').textContent = c.short;
+  $('#mapPrice').textContent = `${c.ad} € / ${c.ch} €`;
+  cancelAnimationFrame(boatAnim);
+  mapBoat.setAttribute('opacity', 1);
+  const t0 = performance.now();
+  (function move(now) {
+    const p = ((now - t0) / 5000) % 1;
+    const pt = routePath.getPointAtLength(p * len);
+    mapBoat.setAttribute('transform', `translate(${pt.x},${pt.y})`);
+    boatAnim = requestAnimationFrame(move);
+  })(t0);
+}
+
+/* ---------- Circuit list ---------- */
+$('#circList').innerHTML = CIRCUITS.map((c, i) => `
+  <article class="circ reveal d${i % 3}" data-id="${c.id}">
+    <span class="num">Circuit ${i + 1}</span>
+    <h3>${c.name}</h3>
+    <div class="row">
+      <div class="price"><div><b>${c.ad} €</b><small>par adulte</small></div><div><b>${c.ch} €</b><small>par enfant</small></div></div>
+      <a href="#reserver" class="btn btn-pink mini" data-preset="${c.id}">Réserver</a>
+    </div>
+  </article>`).join('');
+$$('.circ').forEach(el => {
+  io.observe(el);
+  const c = CIRCUITS.find(x => x.id === el.dataset.id);
+  const act = () => { $$('.circ').forEach(o => o.classList.toggle('active', o === el)); showRoute(c); };
+  el.addEventListener('mouseenter', act);
+  el.addEventListener('click', act);
+});
+new IntersectionObserver((es, o) => es.forEach(e => {
+  if (e.isIntersecting) { $('.circ').classList.add('active'); showRoute(CIRCUITS[0]); o.disconnect(); }
+}), { threshold: .4 }).observe($('#map'));
+
+/* ---------- Booking ---------- */
+const S = { svc: 'c1', step: 1, ad: 2, ch: 0 };
+const OPTIONS = [
+  ...CIRCUITS.map((c, i) => ({ id: c.id, em: ['🏝️', '🌅', '🐢', '🐬'][i], t: `Circuit ${i + 1}`, s: `${c.short} · ${c.ad} € / ${c.ch} €` })),
+  { id: 'taxi', em: '🚤', t: 'Taxi bateau', s: 'Transfert sur mesure · prix sur devis', wide: true }
+];
+$('#choices').innerHTML = OPTIONS.map(o => `<button type="button" class="choice${o.wide ? ' wide' : ''}" data-id="${o.id}"><span class="em">${o.em}</span><div><b>${o.t}</b><small>${o.s}</small></div></button>`).join('');
+$$('.choice').forEach(b => b.onclick = () => { S.svc = b.dataset.id; update(); });
+
+const dateIn = $('#date');
+const today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+dateIn.min = today.toISOString().slice(0, 10);
+
+$$('.counter button').forEach(b => b.onclick = () => {
+  const k = b.dataset.c;
+  S[k] = Math.max(k === 'ad' ? 1 : 0, Math.min(60, S[k] + +b.dataset.d));
+  $('#' + k).textContent = S[k];
+  update();
+});
+['mB', 'mL', 'ar', 'date', 'time', 'from', 'to', 'name', 'tel', 'msg'].forEach(id => $('#' + id).addEventListener('input', update));
+
+function calc() {
+  const isTaxi = S.svc === 'taxi', n = S.ad + S.ch;
+  const group = !isTaxi && n >= GROUP.min;
+  const lines = [];
+  let total = null;
+  if (isTaxi) {
+    lines.push(['Prestation', 'Taxi bateau']);
+    const f = $('#from').value.trim(), t = $('#to').value.trim();
+    if (f || t) lines.push(['Trajet', `${f || '?'} → ${t || '?'}${$('#ar').checked ? ' (A/R)' : ''}`]);
+  } else {
+    const c = CIRCUITS.find(x => x.id === S.svc);
+    lines.push(['Circuit', c.short]);
+    if (group) {
+      total = S.ad * GROUP.ad + S.ch * GROUP.ch;
+      lines.push(['Tarif groupe', 'repas inclus']);
+    } else {
+      total = S.ad * c.ad + S.ch * c.ch;
+      if ($('#mB').checked) { total += S.ad * MEALS.B.ad + S.ch * MEALS.B.ch; lines.push(['Petit-déjeuner', '✓']); }
+      if ($('#mL').checked) { total += S.ad * MEALS.L.ad + S.ch * MEALS.L.ch; lines.push(['Déjeuner grillé', '✓']); }
+    }
+  }
+  lines.push(['Passagers', `${S.ad} adulte${S.ad > 1 ? 's' : ''}${S.ch ? ` + ${S.ch} enfant${S.ch > 1 ? 's' : ''}` : ''}`]);
+  if (dateIn.value) lines.push(['Date', new Date(dateIn.value + 'T12:00').toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }) + ' · ' + $('#time').value]);
+  return { lines, total, group, isTaxi };
+}
+
+let shown = 0, totAnim;
+function animateTotal(to) {
+  const el = $('#total');
+  if (to === null) { el.textContent = 'Sur devis'; shown = 0; return; }
+  const from = shown, t0 = performance.now();
+  cancelAnimationFrame(totAnim);
+  (function step(now) {
+    const p = Math.min(1, (now - t0) / 600);
+    shown = Math.round(from + (to - from) * (1 - Math.pow(1 - p, 3)));
+    el.textContent = shown + ' €';
+    if (p < 1) totAnim = requestAnimationFrame(step);
+  })(t0);
+}
+
+function update() {
+  $$('.choice').forEach(b => b.classList.toggle('sel', b.dataset.id === S.svc));
+  const r = calc();
+  $('#taxiFields').style.display = r.isTaxi ? 'block' : 'none';
+  $('#mealFields').style.display = r.isTaxi ? 'none' : 'block';
+  $$('#tgB,#tgL').forEach(t => t.classList.toggle('dis', r.group));
+  $('#groupNote').classList.toggle('show', r.group);
+  $('#recapList').innerHTML = r.lines.map(([a, b]) => `<li><span>${a}</span><span>${b}</span></li>`).join('');
+  animateTotal(r.total);
+  $('#sendWa').href = `https://wa.me/${WA}?text=${encodeURIComponent(buildMsg(r))}`;
+}
+
+function buildMsg(r) {
+  let m = 'Bonjour Rihilati 👋\nJe souhaite réserver :\n\n';
+  r.lines.forEach(([a, b]) => m += `• ${a} : ${b}\n`);
+  m += `• Total estimé : ${r.total === null ? 'sur devis' : r.total + ' €'}\n`;
+  const n = $('#name').value.trim(), t = $('#tel').value.trim(), msg = $('#msg').value.trim();
+  if (n) m += `\nNom : ${n}`;
+  if (t) m += `\nTél : ${t}`;
+  if (msg) m += `\nMessage : ${msg}`;
+  return m + '\n\nMerci !';
+}
+
+function goStep(n) {
+  S.step = n;
+  $$('.step').forEach(s => s.classList.toggle('on', +s.dataset.step === n));
+  $$('.steps div').forEach((d, i) => d.classList.toggle('done', i < n));
+  $('#prev').style.visibility = n > 1 ? 'visible' : 'hidden';
+  $('#next').innerHTML = n < 3 ? 'Continuer →' : '✅ Envoyer ma demande';
+  $('#err').textContent = '';
+}
+$('#prev').onclick = () => goStep(S.step - 1);
+$('#next').onclick = () => {
+  const err = $('#err');
+  if (S.step === 2) {
+    if (!dateIn.value) { err.textContent = '📅 Choisissez une date.'; dateIn.focus(); return; }
+    if (S.svc === 'taxi' && !$('#to').value.trim()) { err.textContent = '📍 Indiquez votre destination.'; $('#to').focus(); return; }
+  }
+  if (S.step < 3) return goStep(S.step + 1);
+  if (!$('#name').value.trim() || $('#tel').value.replace(/\D/g, '').length < 9) {
+    err.textContent = '🙂 Indiquez votre nom et un numéro de téléphone valide.'; return;
+  }
+  update();
+  window.open($('#sendWa').href, '_blank', 'noopener');
+  toast('🎉 Demande prête ! Envoyez-la dans WhatsApp, on vous répond vite.');
+  confetti();
+};
+$('#sendWa').addEventListener('click', e => {
+  if (!dateIn.value) { e.preventDefault(); goStep(2); $('#err').textContent = '📅 Choisissez d\'abord une date.'; $('#reserver').scrollIntoView(); }
+});
+
+function toast(t) {
+  const el = $('#toast'); el.textContent = t; el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 4000);
+}
+function confetti() {
+  if (reduce) return;
+  const cols = ['#ff4f8b', '#19c3e6', '#2ee6d0', '#ffc04d', '#fff'];
+  for (let i = 0; i < 80; i++) {
+    const c = document.createElement('i');
+    const s = 6 + Math.random() * 6;
+    Object.assign(c.style, { position: 'fixed', left: '50%', top: '60%', width: s + 'px', height: s * .5 + 'px', background: cols[i % 5], zIndex: 90, borderRadius: '2px', pointerEvents: 'none' });
+    document.body.appendChild(c);
+    const a = Math.random() * 6.28, v = 200 + Math.random() * 300;
+    c.animate([{ transform: 'translate(0,0) rotate(0)', opacity: 1 }, { transform: `translate(${Math.cos(a) * v}px,${Math.sin(a) * v - 200}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }], { duration: 1400 + Math.random() * 800, easing: 'cubic-bezier(.2,.8,.3,1)' }).onfinish = () => c.remove();
+  }
+}
+
+/* Preset buttons anywhere on the page */
+document.addEventListener('click', e => {
+  const p = e.target.closest('[data-preset]');
+  if (!p) return;
+  const v = p.dataset.preset;
+  if (v === 'group') { S.svc = 'c1'; S.ad = 15; $('#ad').textContent = 15; }
+  else S.svc = v;
+  update(); goStep(v === 'group' ? 2 : 1);
+  if (p.tagName !== 'A') $('#reserver').scrollIntoView({ behavior: 'smooth' });
+});
+
+$('#yr').textContent = new Date().getFullYear();
+update();
+</script>
+</body>
+</html>
